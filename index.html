@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>LIVe 定例議事録ハブ</title>
+<style>
+  :root{
+    --navy:#123a6b; --blue:#1e6fd9; --sky:#e8f4fd; --sky2:#d3e9fa;
+    --sand:#fffdf5; --ink:#111; --accent:#ff9f1c;
+    --font-body:"Hiragino Maru Gothic ProN","Hiragino Sans","Yu Gothic Medium",Meiryo,sans-serif;
+    --font-head:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Yu Gothic UI",Meiryo,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.85;
+    font-feature-settings:"palt" 1;background-color:var(--sky);
+    background-image:linear-gradient(rgba(30,111,217,.07) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(30,111,217,.07) 1px,transparent 1px);
+    background-size:24px 24px;}
+  .wrap{max-width:860px;margin:0 auto;padding:40px 20px 90px}
+  header{background:var(--sand);border:3px solid var(--navy);border-radius:18px;
+    padding:26px 28px 22px;margin-bottom:30px;box-shadow:6px 6px 0 rgba(18,58,107,.25);position:relative}
+  header h1{font-family:var(--font-head);font-size:27px;line-height:1.45;margin:0 0 10px;font-weight:900}
+  header .meta{font-size:13px;color:#444;margin:0;line-height:1.9}
+  .sticker{display:inline-block;background:var(--accent);color:#fff;font-weight:700;
+    border:2px solid var(--navy);border-radius:999px;padding:3px 14px;font-size:12.5px;
+    letter-spacing:.1em;margin-bottom:12px;transform:rotate(-2deg);box-shadow:2px 2px 0 rgba(18,58,107,.3)}
+  .zukan{position:absolute;top:18px;right:22px;font-size:34px;line-height:1;transform:rotate(8deg)}
+  nav.crumb{margin:0 0 22px;font-size:14px}
+  nav.crumb a{color:var(--blue);font-weight:700;text-decoration:none}
+  nav.crumb a:hover{text-decoration:underline}
+  section{background:#fff;border:3px solid var(--navy);border-radius:16px;
+    padding:24px 26px 20px;margin:0 0 28px;box-shadow:5px 5px 0 rgba(18,58,107,.18)}
+  h2{font-family:var(--font-head);font-size:20px;line-height:1.55;margin:-24px -26px 20px;
+    padding:13px 20px;background:var(--sky2);color:var(--ink);border-radius:12px 12px 0 0;
+    font-weight:900;border-bottom:3px solid var(--navy)}
+  h2 .num{display:inline-block;background:var(--navy);color:#fff;border-radius:8px;
+    padding:1px 9px;margin-right:11px;font-size:15px}
+  h3{font-family:var(--font-head);font-size:16.5px;font-weight:900;margin:22px 0 8px}
+  ul{margin:8px 0 14px;padding-left:22px}
+  li{margin:4px 0}
+  p{margin:8px 0}
+  blockquote{margin:10px 0 14px;padding:8px 16px;border-left:4px solid var(--sky2);
+    background:var(--sky);border-radius:0 8px 8px 0;font-size:14.5px;color:#333}
+  .tblwrap{overflow-x:auto;margin:10px 0 16px}
+  table{border-collapse:collapse;width:100%;font-size:14.5px;background:#fff}
+  th,td{border:2px solid var(--sky2);padding:7px 12px;text-align:left;vertical-align:top}
+  th{background:var(--sky);font-family:var(--font-head);font-weight:900;white-space:nowrap}
+  code{background:var(--sky);border-radius:4px;padding:1px 6px;font-size:.9em}
+  a{color:var(--blue)}
+  .trail{text-align:center;font-size:20px;letter-spacing:18px;margin:26px 0;opacity:.75}
+  .pos{background:var(--sky);border:2px dashed var(--blue);border-radius:12px;
+    padding:12px 16px;margin:0 0 14px;font-size:15px}
+  .datebadge{display:inline-block;background:var(--navy);color:#fff;border-radius:8px;
+    padding:1px 10px;font-size:13px;font-family:var(--font-head);font-weight:700;margin-right:10px;white-space:nowrap}
+  .arclist{list-style:none;padding:0;margin:0}
+  .arclist li{border-bottom:2px dotted var(--sky2);padding:9px 2px;margin:0;display:flex;
+    gap:10px;align-items:baseline;flex-wrap:wrap}
+  .arclist a{font-weight:700;text-decoration:none}
+  .arclist a:hover{text-decoration:underline}
+  .arclist .pos1{font-size:13px;color:#555;flex-basis:100%;padding-left:2px}
+  .aglabel{display:inline-block;background:var(--sky2);border-radius:6px;padding:0 8px;
+    font-size:12.5px;font-family:var(--font-head);font-weight:700;margin-right:8px;white-space:nowrap}
+  .small{font-size:13px;color:#555}
+  footer{margin-top:36px;font-size:12.5px;color:#556;text-align:center;line-height:1.9}
+  .empty{color:#666;font-size:14.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+
+<header>
+  <span class="sticker">LIVe 定例ハブ</span>
+  <span class="zukan">🎓</span>
+  <h1>LIVe 定例議事録ハブ</h1>
+  <p class="meta">東京大学教養学部 × 博報堂 LIVe／BDS の定例ミーティング記録。<br>
+  最新の定例：2026年8月19日（水）。議事録が届くたびにこの頁は自動で更新される。</p>
+</header>
+
+<section>
+<h2><span class="num">01</span>前回のふりかえり — 2026年8月19日（水）</h2>
+<h3>LIVe定例（8月・8/19）｜BDS授業のアウトプット方針を探究・小論文重視へ転換</h3>
+<div class="pos">🧭 8/4流会・8/14キャンセルを挟んで3週間ぶりに開かれた回。Aセメスター（秋学期「恋」）の授業設計を、アイデア出し中心から探究・リサーチ中心へ転換することで合意した。あわせて宮澤さんからBDS成果をLIVeセミナー・書籍として発信する構想が出た。</div>
+<ul><li>BDSポスターのラフが8/21（金）に上がる予定。ホームページ更新はポスター到着後。</li><li>Aセメスターの授業スケジュールは昨年とほぼ同じ構成。最終発表は年明け1月中旬頃の見込み。</li><li>授業のアウトプット方針を転換——アイデア出しより探究・リサーチを重視し、チームごとに小論文を書いてレポートにまとめる方向で合意。</li><li>佐藤さんが来週、レポートの構成案（Word）を持参する。</li></ul>
+<p><a href="minutes/20260819.html">→ この回の議事録全文</a></p>
+</section>
+
+<div class="trail">🎓 ✏️ 📚</div>
+
+<section>
+<h2><span class="num">02</span>いまのタスク（2026年8月19日（水） の定例より）</h2>
+<div class="tblwrap"><table><tbody>
+<tr><th>担当</th><th>内容</th></tr>
+<tr><td style='white-space:nowrap'>佐藤さん</td><td>ポスターのラフ（8/21予定）をチームへ共有</td></tr><tr><td style='white-space:nowrap'>佐藤さん</td><td>BDSレポートの構成案をWordで作成し来週持参</td></tr><tr><td style='white-space:nowrap'>佐藤さん</td><td>確定スケジュール（クリスマス・年末年始は「チーム作業」）をポスター裏面用に朝川さんへ共有</td></tr><tr><td style='white-space:nowrap'>ボヴェさん</td><td>駒場祭期間の教室使用について前田さんを含めて連絡（鍵の受け渡し方法も確認）</td></tr><tr><td style='white-space:nowrap'>ボヴェさん</td><td>「恋」テーマの切り口候補を考えておく（「幸せ」回の編集会議の進め方を参考に）</td></tr><tr><td style='white-space:nowrap'>ボヴェさん</td><td>LIVe学生コミュニティ（授業未受講者）への呼びかけ方法を来週の議題に</td></tr>
+</tbody></table></div>
+
+</section>
+
+
+<section>
+<h2><span class="num">03</span>次回のアジェンダ候補</h2>
+<p class="small">前回の議事録から「来週・次回・持ち越し」に触れた項目を自動で拾ったもの。たたき台として使う。</p>
+<ul><li><span class="aglabel">授業の内容・アウトプット方針</span>佐藤さんが来週、レポートの構成案（Word）を持参する。</li><li><span class="aglabel">LIVeイベント・出版企画との連携</span>授業を取っていないLIVeメンバーにも何らかの形で関与してもらう可能性を来週話し合う。</li></ul>
+
+</section>
+
+<div class="trail">📚 ✏️ 🎓</div>
+
+<section>
+<h2><span class="num">04</span>最近の定例</h2>
+<ul class="arclist"><li><span class="datebadge">2026.08.19</span><a href="minutes/20260819.html">LIVe定例（8月・8/19）｜BDS授業のアウトプット方針を探究・小論文重視へ転換</a></li><li><span class="datebadge">2026.08.04</span><a href="minutes/20260804.html">LIVe定例（8/4）｜議題なしで流会</a></li><li><span class="datebadge">2026.07.28</span><a href="minutes/20260728.html">LIVe定例（7月・7/28）｜アシスタント体制の整理とポッドキャスト企画の検討</a></li><li><span class="datebadge">2026.07.22</span><a href="minutes/20260722.html">LIVe定例（7月・7/22）｜BDSラジオ企画・若林さんと初回打合せ</a></li><li><span class="datebadge">2026.07.15</span><a href="minutes/20260715.html">LIVe定例（7月・7/15）｜BDSシラバス秋学期テーマを「恋」で確定</a></li><li><span class="datebadge">2026.07.08</span><a href="minutes/20260708.html">LIVe定例（7月・7/8）｜秋学期テーマを「恋」「縁」2案に絞り込み</a></li></ul>
+<p><a href="archive.html">→ すべての議事録（全 41 回）</a></p>
+</section>
+
+
+<footer>この頁は LIVe 定例の Circleback 議事録から自動生成される｜生成 2026-08-19 13:00 JST<br>
+<a href="index.html">ホーム</a> ／ <a href="archive.html">アーカイブ</a></footer>
+</div>
+</body>
+</html>
